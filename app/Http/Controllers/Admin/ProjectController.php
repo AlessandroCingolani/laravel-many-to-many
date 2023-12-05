@@ -40,7 +40,7 @@ class ProjectController extends Controller
         return view('admin.projects.index', compact('projects', 'direction'));
     }
 
-    public function noTags()
+    public function noTechs()
     {
         $projects = Project::whereNotIn('id', function (Builder $query) {
             $query->select('project_id')->from('project_technology');
