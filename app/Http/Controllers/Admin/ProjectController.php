@@ -10,6 +10,7 @@ use App\Models\Technology;
 use App\Functions\Helper;
 use App\Http\Requests\ProjectRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Query\Builder;
 
 class ProjectController extends Controller
 {
@@ -36,6 +37,15 @@ class ProjectController extends Controller
     {
         $direction = $direction == 'desc' ? 'asc' : 'desc';
         $projects = Project::orderBy($column, $direction)->paginate(10);
+        return view('admin.projects.index', compact('projects', 'direction'));
+    }
+
+    public function noTags()
+    {
+        $projects = Project::whereNotIn('id', function (Builder $query) {
+            $query->select('project_id')->from('project_technology');
+        })->paginate(10);
+        $direction = 'desc';
         return view('admin.projects.index', compact('projects', 'direction'));
     }
 
