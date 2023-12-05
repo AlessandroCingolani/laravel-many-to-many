@@ -47,7 +47,7 @@
                             <a class="badge text-bg-info text-decoration-none"
                                 href="{{ route('admin.project-technology', $technology) }}">{{ $technology->name }}</a>
                         @empty
-                            -
+                            <a class="badge text-bg-info text-decoration-none" href="{{ route('admin.no-tech') }}">-</a>
                         @endforelse
                     </td>
                     <td>{{ $project->type?->name ?? '-' }}</td>
