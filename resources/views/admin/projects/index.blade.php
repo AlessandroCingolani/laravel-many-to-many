@@ -16,11 +16,20 @@
             <tr>
                 <th scope="col"><a class="text-decoration-none text-black"
                         href="{{ route('admin.order-by', ['direction' => $direction, 'column' => 'id']) }}"><i
-                            class="fa-solid fa-sort"></i>ID</a>
+                            class="fa-solid fa-sort order-icon"></i>ID</a>
                 </th>
-                <th scope="col">Name project</th>
-                <th scope="col">Start date</th>
-                <th scope="col">End date</th>
+                <th scope="col"><a class="text-decoration-none text-black"
+                        href="{{ route('admin.order-by', ['direction' => $direction, 'column' => 'name']) }}"><i
+                            class="fa-solid fa-sort order-icon"></i>Name project</a>
+                </th>
+                <th scope="col"><a class="text-decoration-none text-black"
+                        href="{{ route('admin.order-by', ['direction' => $direction, 'column' => 'start_date']) }}"><i
+                            class="fa-solid fa-sort order-icon"></i>Start date</a>
+                </th>
+                <th scope="col"><a class="text-decoration-none text-black"
+                        href="{{ route('admin.order-by', ['direction' => $direction, 'column' => 'end_date']) }}"><i
+                            class="fa-solid fa-sort order-icon"></i>End date</a>
+                </th>
                 <th scope="col">Technology</th>
                 <th scope="col">Type</th>
                 <th class="text-center" scope="col">Actions</th>
