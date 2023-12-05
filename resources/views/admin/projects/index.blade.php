@@ -14,7 +14,10 @@
     <table class="table table-bordered border-success">
         <thead class="table-success">
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col"><a class="text-decoration-none text-black"
+                        href="{{ route('admin.order-by', ['direction' => $direction, 'column' => 'id']) }}"><i
+                            class="fa-solid fa-sort"></i>ID</a>
+                </th>
                 <th scope="col">Name project</th>
                 <th scope="col">Start date</th>
                 <th scope="col">End date</th>
