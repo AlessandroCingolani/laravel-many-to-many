@@ -43,6 +43,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('type-project', [TypeController::class, 'typeProject'])->name('type-project');
         Route::get('project-technology/{technology}', [TechnologyController::class, 'projectsTechnologies'])->name('project-technology');
         Route::get('order-by/{direction}/{column}', [ProjectController::class, 'orderBy'])->name('order-by');
+        Route::get('no-tech', [ProjectController::class, 'noTechs'])->name('no-tech');
     });
 
 require __DIR__ . '/auth.php';
